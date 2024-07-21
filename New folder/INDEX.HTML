@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lydia's Personal Website</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+    <script>
+        function opentab(tabname) {
+            var i;
+            var x = document.getElementsByClassName("tab-contents");
+            var y = document.getElementsByClassName("tab-links");
+            for (i = 0; i < x.length; i++) {
+                x[i].classList.remove("active-tab");
+            }
+            for (i = 0; i < y.length; i++) {
+                y[i].classList.remove("active-link");
+            }
+            document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-link");
+        }
+    </script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="IMAGES/welcome.png.jfif" class="logo">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">SERVICES</a></li>
+          <li><a href="#">PORTFOLIO</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>web and design</p>
+        <h1>Hi I'm <span>Lydia</span> Warima<br> from Kenya</h1>
+      </div>
+    </div>   
+  </div> 
+  <div id="ABOUT">
+    <!---------------about----------->
+    <div class="container">
+      <div class="row">
+        <div class="ABOUT-col-1">
+          <img src="IMAGES/me.png.jpg">
+        </div>
+        <div class="ABOUT-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>I'm a student in KCA studying a diploma in Information Technology. I'm in my first trimester. I chose IT because I am fascinated by how computers work and I would like to pursue a course in web design.</p>
+
+          <div class="tab title">
+            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('Education')">Education</p>
+          </div> 
+          <div class="tab-contents active-tab" id="Skills">
+            <ul>
+              <li><span>Web Design</span><br>Using HTML, CSS, JS</li>
+              <li><span>UI/UX</span><br>Designing web interfaces</li>
+              <li><span>App Development</span><br>Building apps</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="Experience">
+            <ul>
+              <li><span>Internship at XYZ Company</span><br>Worked on web development projects</li>
+              <li><span>Freelance Web Designer</span><br>Created websites for small businesses</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="Education">
+            <ul>
+              <li><span>Diploma in Information Technology</span><br>KCA University, First Trimester</li>
+              <li><span>High School Diploma</span><br>XYZ High School</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </div>
+    <section id="contact">  
+        <h2>Contact Me</h2>  
+        <form id="contact-form">  
+            <input type="text" name="name" placeholder="Your Name" required>  
+            <input type="email" name="email" placeholder="Your Email" required>  
+            <textarea name="message" placeholder="Your Message" required></textarea>  
+            <button type="submit">Send Message</button>  
+        </form>  
+    </section>  
+
+    <footer>  
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>  
+    </footer>  
+
+    <script src="script.js"></script>  
+</body>  
+</html>
